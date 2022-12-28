@@ -1,3 +1,5 @@
+require 'cocoapods-scancode/trig'
+
 module Pod
   class Command
     # This is an example of a cocoapods plugin adding a top-level subcommand
@@ -18,26 +20,18 @@ module Pod
     #       in the `plugins.json` file, once your plugin is released.
     #
     class Scancode < Command
-      self.summary = 'Short description of cocoapods-scancode.'
+      self.summary = 'scanc undefine key in code'
 
       self.description = <<-DESC
-        Longer description of cocoapods-scancode.
+      help user  scanc undefine key in code
       DESC
 
-      self.arguments = 'NAME'
+      self.arguments = []
 
-      def initialize(argv)
-        @name = argv.shift_argument
-        super
-      end
-
-      def validate!
-        super
-        help! 'A Pod name is required.' unless @name
-      end
 
       def run
-        UI.puts "Add your implementation for the cocoapods-scancode plugin in #{__FILE__}"
+#        UI.puts "Add your implementation for the cocoapods-scancode plugin in #{__FILE__}"
+          LocalizedScan.pipLine
       end
     end
   end
